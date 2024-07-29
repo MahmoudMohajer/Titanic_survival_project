@@ -15,8 +15,8 @@ This Flask web application predicts the probability of survival for passengers o
 
 1. Clone this repository:
    ```
-   git clone https://github.com/MahmoudMohajer/titanic-survival-prediction.git
-   cd titanic-survival-prediction
+    git clone https://github.com/MahmoudMohajer/Titanic_survival_project.git
+   cd Titanic_survival_project
    ```
 
 2. Create a virtual environment (optional but recommended):
