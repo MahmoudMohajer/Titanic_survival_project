@@ -81,7 +81,7 @@ The model was trained using the following process:
    - Evaluated using accuracy, classification report, and confusion matrix
 
 The best performing model was saved and is used in this application for making predictions.
-
+ you can find the model training code in [kaggle notebook](https://www.kaggle.com/code/mahmoodmohajer/titanic-2)
 ## Contributing
 
 Contributions to improve the app are welcome. Please follow these steps:
