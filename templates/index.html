@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survival Predictor</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { color: #333; }
+        form { max-width: 400px; margin: 20px 0; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select { width: 100%; padding: 8px; margin-bottom: 10px; }
+        input[type="submit"] { background-color: #4CAF50; color: white; cursor: pointer; }
+        input[type="submit"]:hover { background-color: #45a049; }
+        .result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Titanic Survival Predictor</h1>
+    <form method="POST">
+        <label for="pclass">Passenger Class:</label>
+        <select name="pclass" id="pclass" required>
+            <option value="1">1st Class</option>
+            <option value="2">2nd Class</option>
+            <option value="3">3rd Class</option>
+        </select>
+
+        <label for="sex">Sex:</label>
+        <select name="sex" id="sex" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" step="0.1" required>
+
+        <label for="sibsp">Number of Siblings/Spouses Aboard:</label>
+        <input type="number" name="sibsp" id="sibsp" required>
+
+        <label for="parch">Number of Parents/Children Aboard:</label>
+        <input type="number" name="parch" id="parch" required>
+
+        <label for="fare">Fare:</label>
+        <input type="number" name="fare" id="fare" step="0.01" required>
+
+        <label for="embarked">Port of Embarkation:</label>
+        <select name="embarked" id="embarked" required>
+            <option value="C">Cherbourg</option>
+            <option value="Q">Queenstown</option>
+            <option value="S">Southampton</option>
+        </select>
+
+        <label for="title">Title:</label>
+        <select name="title" id="title" required>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Master">Master</option>
+            <option value="Rare">Rare</option>
+        </select>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+    <div class="result">
+        Survival Prediction: {{ "Survived" if prediction == 1 else "Did Not Survive" }}<br>
+        Survival Probability: {{ "%.2f"|format(probability*100) }}%
+    </div>
+    {% endif %}
+</body>
+</html>
